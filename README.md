@@ -1,0 +1,2 @@
+# Brimmy
+Custom Discord Bot
