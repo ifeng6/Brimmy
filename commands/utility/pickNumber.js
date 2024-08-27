@@ -16,7 +16,7 @@ const generateRandomNumber = (firstNum, secondNum = 0) => {
 
 export const pickNumber = {
     data: new SlashCommandBuilder()
-        .setName('picknumber')
+        .setName('pick-number')
         .setDescription('Picks a number given a range')
         .addNumberOption(option =>
             option

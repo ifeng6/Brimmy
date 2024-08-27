@@ -13,6 +13,7 @@ const getMasteries = async (interaction) => {
 
     // Fetch PUUID 
     try {
+        // Get PUUID to use in champion mastery fetch
         const puuidResponse = await fetch(`https://${region}/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}?api_key=${riotAPIKey}`)
         const puuidResponseJSON = await puuidResponse.json()
         const { puuid } = puuidResponseJSON
@@ -43,7 +44,7 @@ const getMasteries = async (interaction) => {
 
 export const leagueChampMastery = {
     data: new SlashCommandBuilder()
-        .setName('leaguemasteries')
+        .setName('league-masteries')
         .setDescription('See your top champion masteries')
         .addStringOption(option =>
             option
