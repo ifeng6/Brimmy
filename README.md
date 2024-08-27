@@ -1,6 +1,6 @@
 # Brimmy
 Custom Discord Bot that has many simple commands, such as converting text, picking a number from a range.
-The bot is focused on providing a user friendly interface for the riot games API on a famliar platform.
+The bot is focused on providing a user friendly interface for the riot games API on a familiar platform.
 
 ## Configuration
 Use ```node <file_name>``` to run configuration files.
