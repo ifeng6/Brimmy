@@ -1,7 +1,6 @@
 import pkg from 'discord.js'
 import { champNameFromID } from '../../helpers/champNameFromID.js'
 import config from '../../config.json' assert { type: 'json' }
-
 import { riotRegionalRouting, riotPlatformRouting } from '../../constants.js'
 
 const { SlashCommandBuilder } = pkg
