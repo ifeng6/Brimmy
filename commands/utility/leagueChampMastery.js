@@ -1,5 +1,7 @@
 import pkg from 'discord.js'
+import { champNameFromID } from '../../helpers/champNameFromID.js'
 import config from '../../config.json' assert { type: 'json' }
+
 import { riotRegionalRouting, riotPlatformRouting } from '../../constants.js'
 
 const { SlashCommandBuilder } = pkg
@@ -20,7 +22,6 @@ const getMasteries = async (interaction) => {
         if (!puuid) {
             throw new Error('Player not found!')
         }
-        console.log('made it here')
         // Get Champion Mastery information
         const masteryResponse = await fetch(`https://${platform}/lol/champion-mastery/v4/champion-masteries/by-puuid/${puuid}/top?api_key=${riotAPIKey}`)
         const responseJSON = await masteryResponse.json()
@@ -33,10 +34,11 @@ const getMasteries = async (interaction) => {
         let i = 1
         responseJSON.forEach(element => {
             const { championId, championLevel, championPoints } = element
-            res.push(`${i}. Champ: ${championId}, Champ Level: ${championLevel}, Champ Points: ${championPoints}`) // Need to map ChampIds to Champion Names
+            const champName = champNameFromID(championId.toString())
+            res.push(`${i}. Champion: ${champName} | Mastery Level: ${championLevel} | Mastery Points: ${championPoints}`)
             i++
         })
-        interaction.reply(`Here are your top masteries: ${res} `) // Temporarily return list --> will be embeds
+        interaction.reply(res.join('\n')) // Temporarily return list --> will be embeds
     } catch (error) {
         interaction.reply(`${error}`)
     }

@@ -5,7 +5,6 @@ import { test } from './utility/test.js'
 import { spongeMock } from './utility/spongeMock.js'
 import { pickNumber } from './utility/pickNumber.js'
 import { leagueChampMastery } from './utility/leagueChampMastery.js'
-import { loadChampionData } from './utility/loadChampionData.js'
 
 export const commands = [
     ping,
@@ -15,5 +14,4 @@ export const commands = [
     spongeMock,
     pickNumber,
     leagueChampMastery,
-    loadChampionData,
 ]
