@@ -6,6 +6,7 @@ import { spongeMock } from './utility/spongeMock.js'
 import { pickNumber } from './utility/pickNumber.js'
 import { leagueChampMastery } from './utility/leagueChampMastery.js'
 import { freeChampRotation } from './utility/freeChampRotation.js'
+import { aramChampAdjustments } from './utility/aramChampAdjustments.js'
 
 export const commands = [
     ping,
@@ -16,4 +17,5 @@ export const commands = [
     pickNumber,
     leagueChampMastery,
     freeChampRotation,
+    aramChampAdjustments,
 ]
