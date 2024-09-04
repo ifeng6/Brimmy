@@ -36,7 +36,7 @@ export const aramChampAdjustments = {
         .addStringOption(option =>
             option
                 .setName('champ')
-                .setDescription('Champion you would like to know ARAM-specific changes')
+                .setDescription('Champion you would like to know ARAM-specific changes. Type "all" for an entire list.')
                 .setRequired(true)
         ),
     execute: getChampAdjustments,
